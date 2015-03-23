@@ -1,0 +1,5 @@
+name: SimpleHome
+main: com.zandor300.simplehome.SimpleHome
+version: 1.0.0
+author: Zandor300
+depend: [ZSUtilities]
