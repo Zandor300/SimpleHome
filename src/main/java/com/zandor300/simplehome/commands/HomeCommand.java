@@ -39,7 +39,7 @@ public class HomeCommand extends Command {
 			return;
 
 		Player player = (Player) sender;
-		if(!SimpleHome.getPlugin().getConfig().getConfigurationSection("homes").contains(player.getUniqueId().toString())) {
+		if(!SimpleHome.getCustomConfig().getConfigurationSection("homes").contains(player.getUniqueId().toString())) {
 			SimpleHome.getChat().sendMessage(player, "You haven't set a home!");
 			return;
 		}
