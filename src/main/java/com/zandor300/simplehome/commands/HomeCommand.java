@@ -44,10 +44,10 @@ public class HomeCommand extends Command {
 			return;
 		}
 
-		World world = Bukkit.getWorld(SimpleHome.getPlugin().getConfig().getString("homes." + player.getUniqueId().toString() + ".w"));
-		double x = SimpleHome.getPlugin().getConfig().getDouble("homes." + player.getUniqueId().toString() + ".x");
-		double y = SimpleHome.getPlugin().getConfig().getDouble("homes." + player.getUniqueId().toString() + ".y");
-		double z = SimpleHome.getPlugin().getConfig().getDouble("homes." + player.getUniqueId().toString() + ".z");
+		World world = Bukkit.getWorld(SimpleHome.getCustomConfig().getString("homes." + player.getUniqueId().toString() + ".w"));
+		double x = SimpleHome.getCustomConfig().getDouble("homes." + player.getUniqueId().toString() + ".x");
+		double y = SimpleHome.getCustomConfig().getDouble("homes." + player.getUniqueId().toString() + ".y");
+		double z = SimpleHome.getCustomConfig().getDouble("homes." + player.getUniqueId().toString() + ".z");
 		Location location = new Location(world, x, y, z);
 
 		SimpleHome.getChat().sendMessage(sender, "Sending you to your home...");

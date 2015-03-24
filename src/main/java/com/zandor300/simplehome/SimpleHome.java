@@ -19,6 +19,7 @@ import com.zandor300.simplehome.commands.HomeCommand;
 import com.zandor300.simplehome.commands.SetHomeCommand;
 import com.zandor300.simplehome.commands.SimpleHomeCommand;
 import com.zandor300.zsutilities.commandsystem.CommandManager;
+import com.zandor300.zsutilities.config.Config;
 import com.zandor300.zsutilities.utilities.Chat;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -35,6 +36,7 @@ public class SimpleHome extends JavaPlugin {
 
 	private static Chat chat = new Chat("SimpleHome");
 	private static SimpleHome plugin;
+	private static Config config;
 
 	public static Chat getChat() {
 		return chat;
@@ -44,12 +46,15 @@ public class SimpleHome extends JavaPlugin {
 		return plugin;
 	}
 
+	public static Config getCustomConfig() {
+		return config;
+	}
+
 	@Override
 	public void onEnable() {
 		chat.sendConsoleMessage("Setting things up...");
 
-		saveDefaultConfig();
-		this.getConfig().options().copyDefaults(true);
+		config = new Config(this, "config.yml", true);
 		plugin = this;
 		PluginManager pm = Bukkit.getPluginManager();
 

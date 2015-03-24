@@ -44,11 +44,10 @@ public class SetHomeCommand extends Command {
 			return;
 		}
 
-		SimpleHome.getPlugin().getConfig().set("homes." + player.getUniqueId().toString() + ".w", player.getWorld().getName());
-		SimpleHome.getPlugin().getConfig().set("homes." + player.getUniqueId().toString() + ".x", player.getLocation().getX());
-		SimpleHome.getPlugin().getConfig().set("homes." + player.getUniqueId().toString() + ".y", player.getLocation().getY());
-		SimpleHome.getPlugin().getConfig().set("homes." + player.getUniqueId().toString() + ".z", player.getLocation().getZ());
-		SimpleHome.getPlugin().saveConfig();
+		SimpleHome.getCustomConfig().set("homes." + player.getUniqueId().toString() + ".w", player.getWorld().getName());
+		SimpleHome.getCustomConfig().set("homes." + player.getUniqueId().toString() + ".x", player.getLocation().getX());
+		SimpleHome.getCustomConfig().set("homes." + player.getUniqueId().toString() + ".y", player.getLocation().getY());
+		SimpleHome.getCustomConfig().set("homes." + player.getUniqueId().toString() + ".z", player.getLocation().getZ());
 
 		SimpleHome.getChat().sendMessage(sender, "Your home has been set!");
 	}
