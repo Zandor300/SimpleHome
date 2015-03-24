@@ -17,6 +17,7 @@ package com.zandor300.simplehome;
 
 import com.zandor300.simplehome.commands.HomeCommand;
 import com.zandor300.simplehome.commands.SetHomeCommand;
+import com.zandor300.simplehome.commands.SimpleHomeCommand;
 import com.zandor300.zsutilities.commandsystem.CommandManager;
 import com.zandor300.zsutilities.utilities.Chat;
 import org.bukkit.Bukkit;
@@ -63,6 +64,7 @@ public class SimpleHome extends JavaPlugin {
 		CommandManager cm = new CommandManager();
 		cm.registerCommand(new HomeCommand(), this);
 		cm.registerCommand(new SetHomeCommand(), this);
+		cm.registerCommand(new SimpleHomeCommand(), this);
 
 		chat.sendConsoleMessage("Everything is setup!");
 		chat.sendConsoleMessage("Enabled.");
